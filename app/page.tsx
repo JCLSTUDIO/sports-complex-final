@@ -1,128 +1,204 @@
-import React from 'react';
+"use client"; 
+import React, { useState } from 'react';
 
-export default function DDandJSports() {
-  const whatsappLink = "https://wa.me/2349029291532";
+export default function DDandJSportsVenture() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const whatsappNumber = "2349029291532";
+  const socialHandle = "DDANDJSPORTSVENTURE";
 
-  // SNUKER & BILLIARDS
-  const snookerBoards = [
-    { name: '7ft Marble Snooker Board', price: '₦1,800,000', note: 'Free Delivery in Sagamu' },
-    { name: '8ft Marble Snooker Board', price: '₦2,600,000', note: 'Free Delivery in Sagamu' },
-    { name: 'Luxury Non-Marble Board', price: '₦1,000,000', note: 'Premium Finish' },
-    { name: 'Coin-Op Snooker Board', price: '₦1,200,000', note: 'Non-Marble' },
+  // --- OFFICIAL MASTER INVENTORY ---
+  const allItems = [
+    // SNOOKER & BILLIARDS
+    { cat: "Snooker & Billiards", name: "8ft Marble Snooker Board", price: "₦2,600,000", note: "Includes Sagamu Delivery" },
+    { cat: "Snooker & Billiards", name: "7ft Marble Snooker Board", price: "₦1,800,000", note: "Includes Sagamu Delivery" },
+    { cat: "Snooker & Billiards", name: "Non-Marble Board (with Coin)", price: "₦1,200,000" },
+    { cat: "Snooker & Billiards", name: "Luxury Non-Marble Snooker Board", price: "₦1,000,000" },
+    { cat: "Snooker & Billiards", name: "SNOOKER STICK (3IN1)", price: "₦65,000" },
+    { cat: "Snooker & Billiards", name: "SNOOKER BALL SET (PREMIUM)", price: "₦65,000" },
+    { cat: "Snooker & Billiards", name: "SNOOKER CLOTH (PREMIUM)", price: "₦45,000" },
+    { cat: "Snooker & Billiards", name: "MASTER CHALK (BOX)", price: "₦15,000" },
+    { cat: "Snooker & Billiards", name: "SNOOKER GLOVES", price: "₦2,500" },
+    { cat: "Snooker & Billiards", name: "SNOOKER COIN DOLLAR/LIBERTY", price: "₦1,700" },
+    { cat: "Snooker & Billiards", name: "CUE TIP GLUE", price: "₦1,500" },
+    { cat: "Snooker & Billiards", name: "SNOOKER TIP (9MM/10MM)", price: "₦700" },
+    { cat: "Snooker & Billiards", name: "FLAT TIPS (9MM/10MM)", price: "₦700" },
+    { cat: "Snooker & Billiards", name: "SNOOKER CHALK", price: "₦500" },
+
+    // APPAREL & ACCESSORIES
+    { cat: "Apparel & Accessories", name: "NIKE ZOOM PEGASUS (43)", price: "₦60,000" },
+    { cat: "Apparel & Accessories", name: "NIKE FLYKNIT/ZOOMX CANVAS", price: "₦50,000" },
+    { cat: "Apparel & Accessories", name: "NIKE PHANTOM BOOT", price: "₦50,000" },
+    { cat: "Apparel & Accessories", name: "NIKE GHOST LACE BOOT", price: "₦40,000" },
+    { cat: "Apparel & Accessories", name: "SKECHERS CANVAS (BLACK/BLUE/RED)", price: "₦40,000" },
+    { cat: "Apparel & Accessories", name: "NIKE SNEAKERS", price: "₦40,000" },
+    { cat: "Apparel & Accessories", name: "ADIDAS JOGGERS HIGH GRADE (3XL)", price: "₦38,000" },
+    { cat: "Apparel & Accessories", name: "ADIDAS JOGGERS S-GRADE", price: "₦35,000" },
+    { cat: "Apparel & Accessories", name: "NIKE JOGGERS S-GRADE", price: "₦35,000" },
+    { cat: "Apparel & Accessories", name: "GYM BAG", price: "₦45,000" },
+    { cat: "Apparel & Accessories", name: "ADIDAS CANVAS (40)", price: "₦30,000" },
+    { cat: "Apparel & Accessories", name: "FACE CAP (PREMIUM)", price: "₦25,000" },
+    { cat: "Apparel & Accessories", name: "ADIDAS F50 BOOTS (VARIOUS)", price: "₦25,000" },
+    { cat: "Apparel & Accessories", name: "UNDER ARMOUR SHORT WITH TIGHT", price: "₦20,000" },
+    { cat: "Apparel & Accessories", name: "NIKE LEGGINGS WITH POCKET", price: "₦17,000" },
+    { cat: "Apparel & Accessories", name: "CHILDREN BOOT (33)", price: "₦13,000" },
+    { cat: "Apparel & Accessories", name: "SHORT TIGHTS (M/L/XL/XXL)", price: "₦5,000" },
+    { cat: "Apparel & Accessories", name: "NIKE/ADIDAS BLACK HOSE", price: "₦3,000" },
+
+    // FIELD SPORTS
+    { cat: "Field Sports", name: "MOLTEN AFC FOOTBALL", price: "₦25,000" },
+    { cat: "Field Sports", name: "DERBY STAR FOOTBALL", price: "₦25,000" },
+    { cat: "Field Sports", name: "STRIKER ACTIVE FOOTBALL", price: "₦25,000" },
+    { cat: "Field Sports", name: "NIKE/ADIDAS BALL", price: "₦25,000" },
+    { cat: "Field Sports", name: "GOALKEEPER GLOVES (HIGH GRADE)", price: "₦35,000" },
+    { cat: "Field Sports", name: "CLUB JERSEYS (ARSENAL, MADRID, ETC.)", price: "₦20,000" },
+    { cat: "Field Sports", name: "BADMINTON RACKET", price: "₦18,000" },
+    { cat: "Field Sports", name: "BALL BAG", price: "₦17,000" },
+    { cat: "Field Sports", name: "TRAINING CONE (FLAT)", price: "₦15,000" },
+    { cat: "Field Sports", name: "SILVER PUMP (BIG)", price: "₦10,000" },
+    { cat: "Field Sports", name: "SILVER PUMP (SMALL)", price: "₦8,000" },
+    { cat: "Field Sports", name: "WHISTLE (PLASTIC)", price: "₦5,000" },
+
+    // GYM & FITNESS
+    { cat: "Gym & Fitness", name: "50kg Chrome Barbell & Dumbbell Set", price: "₦235,000" },
+    { cat: "Gym & Fitness", name: "30kg Chrome Dumbbell Set", price: "₦185,000" },
+    { cat: "Gym & Fitness", name: "YOGA MAT (BIG)", price: "₦30,000" },
+    { cat: "Gym & Fitness", name: "YOGA MAT (SMALL)", price: "₦25,000" },
+    { cat: "Gym & Fitness", name: "WEIGHT LIFTING BELT", price: "₦25,000" },
+    { cat: "Gym & Fitness", name: "AB ROLLER WHEEL", price: "₦15,000" },
+    { cat: "Gym & Fitness", name: "PUSH UP BAR", price: "₦12,000" },
+    { cat: "Gym & Fitness", name: "HAND GRIPPER (ADJUSTABLE)", price: "₦9,000" },
+    { cat: "Gym & Fitness", name: "SKIPPING ROPE (COUNTING)", price: "₦8,000" },
+    { cat: "Gym & Fitness", name: "RESISTANCE LOOP BAND (5IN1)", price: "₦3,000" },
+
+    // TABLE TENNIS
+    { cat: "Table Tennis", name: "7ft Aluminum Table Tennis Board", price: "₦860,000" },
+    { cat: "Table Tennis", name: "7ft SMC Table Tennis Board", price: "₦560,000" },
+    { cat: "Table Tennis", name: "TABLE TENNIS NET & POST", price: "₦12,000" },
+    { cat: "Table Tennis", name: "TABLE TENNIS BAT (SINGLE)", price: "₦8,000" },
+    { cat: "Table Tennis", name: "TABLE TENNIS EGG (WHITE)", price: "₦500" },
+
+    // AWARDS & INDOOR GAMES
+    { cat: "Awards & Indoor Games", name: "Premium Trophy (Gold Set)", price: "₦140,000" },
+    { cat: "Awards & Indoor Games", name: "Premium Trophy (Silver Set)", price: "₦125,000" },
+    { cat: "Awards & Indoor Games", name: "DART BOARD", price: "₦35,000" },
+    { cat: "Awards & Indoor Games", name: "FIRST AID BOX", price: "₦18,000" },
+    { cat: "Awards & Indoor Games", name: "SCRABBLE (LARGE)", price: "₦15,000" },
+    { cat: "Awards & Indoor Games", name: "CHESS SET", price: "₦12,000" },
+    { cat: "Awards & Indoor Games", name: "MEDALS HIGH GRADE (GOLD/SILVER)", price: "₦2,000" },
+
+    // COMBAT SPORTS
+    { cat: "Combat Sports", name: "BOXING GLOVES (EVERLAST)", price: "₦40,000" },
+    { cat: "Combat Sports", name: "BOXING GLOVES (VENOM)", price: "₦35,000" },
+    { cat: "Combat Sports", name: "MOUTH GUARD", price: "₦4,000" },
   ];
 
-  // TABLE TENNIS
-  const tableTennis = [
-    { name: '7ft Aluminum Board', price: '₦860,000', material: 'Durable Aluminum' },
-    { name: '7ft SMC Board', price: '₦560,000', material: 'High-quality SMC' },
-  ];
+  const categories = ["Snooker & Billiards", "Apparel & Accessories", "Field Sports", "Gym & Fitness", "Table Tennis", "Awards & Indoor Games", "Combat Sports"];
 
-  // ACCESSORIES & GEAR
-  const gear = [
-    { name: 'La Liga Football', price: '₦25,000', cat: 'Ball' },
-    { name: 'Spalding Basketball', price: '₦25,000', cat: 'Ball' },
-    { name: 'Nike/Adidas Basketball', price: '₦20,000', cat: 'Ball' },
-    { name: 'Premium Face Caps', price: '₦25,000', cat: 'Apparel' },
-    { name: 'Dumbbells', price: '₦4,500/kg', cat: 'Gym' },
-    { name: 'Snooker Chalk/Tips', price: '₦500', cat: 'Parts' },
-  ];
+  const handleOrder = (itemName, itemPrice) => {
+    const message = `Hello DD AND J SPORTS VENTURE, I want to purchase the ${itemName} (${itemPrice}). Please let me know the next steps.`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+  };
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#DB2777] selection:text-white">
       
-      {/* TOP DELIVERY ANNOUNCEMENT */}
-      <div className="bg-[#1E40AF] text-white text-[10px] font-bold tracking-[0.3em] uppercase py-3 text-center px-4">
-        🚚 Free delivery on 7ft & 8ft Marble Boards within Sagamu
-      </div>
-
-      {/* NAVIGATION */}
-      <nav className="p-6 flex justify-between items-center bg-white border-b sticky top-0 z-50 shadow-sm">
-        <div className="flex flex-col">
-          <h1 className="text-xl font-black tracking-tighter text-[#1E40AF] leading-none">
-            DD AND J <span className="text-[#DB2777]">SPORTS</span>
-          </h1>
-          <span className="text-[9px] font-bold tracking-[0.2em] text-slate-400 uppercase">Headquarters: Sagamu</span>
+      {/* --- HEADER --- */}
+      <header className="sticky top-0 z-[100] bg-white border-b shadow-sm">
+        <div className="bg-[#1E40AF] text-white text-[9px] font-bold tracking-[0.3em] uppercase py-2.5 text-center px-4">
+          🚚 Free delivery on Marble Snooker Boards within Sagamu
         </div>
-        <a href={whatsappLink} className="bg-[#25D366] text-white px-5 py-2 text-[10px] font-bold tracking-widest hover:bg-[#1E40AF] transition-all uppercase rounded-full flex items-center gap-2">
-          Chat With Us
-        </a>
-      </nav>
+        <div className="p-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-center md:text-left">
+            <h1 className="text-2xl font-black text-[#1E40AF] tracking-tighter leading-none italic uppercase">
+              DD AND J <span className="text-[#DB2777]">SPORTS</span>
+            </h1>
+            <p className="text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase mt-1">Wellness at its Peak | Est. 2024</p>
+          </div>
 
-      {/* HERO SECTION */}
-      <section className="relative py-20 px-8 md:px-24 bg-slate-50">
-        <div className="max-w-4xl relative z-10">
-          <span className="text-[#DB2777] font-bold tracking-[0.4em] uppercase text-xs">Wellness at its Peak</span>
-          <h2 className="text-[10vw] md:text-[6vw] font-black leading-[0.9] tracking-tighter mb-8 text-slate-900 mt-2">
-            PREMIUM <br /> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E40AF] to-[#DB2777]">
-              SPORTS GEAR.
-            </span>
+          <div className="relative w-full md:w-[450px]">
+            <input 
+              type="text" 
+              placeholder="Search gear, sizes, or categories..."
+              className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-[#DB2777] outline-none transition-all"
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+        </div>
+      </header>
+
+      {/* --- HERO --- */}
+      <section className="bg-slate-50 py-16 px-8 md:px-12 border-b">
+        <div className="max-w-4xl mx-auto text-center md:text-left">
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.85] uppercase italic">
+            YOUR GAME, <br /> <span className="text-[#1E40AF]">OUR GEAR.</span>
           </h2>
-          <p className="text-slate-500 text-lg max-w-xl leading-relaxed mb-10 border-l-4 border-[#1E40AF] pl-8">
-            From professional marble snooker boards to high-performance table tennis setups. 
-            DD and J Sports Venture provides elite equipment for champions.
-          </p>
+          <div className="flex flex-col md:flex-row gap-8">
+             <div className="bg-white p-4 rounded-xl border border-slate-200 flex-1">
+                <p className="text-[9px] font-black uppercase text-[#DB2777] mb-1">HQ Branch: Makun</p>
+                <p className="text-xs font-bold text-slate-600 italic">Ewusi makun road, Bright fashion, Makun Sagamu</p>
+             </div>
+             <div className="bg-white p-4 rounded-xl border border-slate-200 flex-1">
+                <p className="text-[9px] font-black uppercase text-[#1E40AF] mb-1">Branch 2: Ajegunle</p>
+                <p className="text-xs font-bold text-slate-600 italic">Beside Bossy Methodist High School, Sagamu</p>
+             </div>
+          </div>
         </div>
       </section>
 
-      {/* SNOOKER BOARDS SECTION */}
-      <section className="py-20 px-8 md:px-24">
-        <div className="flex items-center gap-4 mb-12">
-          <h3 className="text-2xl font-black uppercase tracking-tight italic">Snooker & Billiards</h3>
-          <div className="h-[2px] flex-1 bg-slate-100"></div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {snookerBoards.map((item, i) => (
-            <div key={i} className="border border-slate-100 p-8 rounded-2xl hover:border-[#1E40AF] transition-all group relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-2 bg-slate-50 text-[8px] font-bold text-slate-400">{item.note}</div>
-              <h4 className="text-sm font-bold mb-4 uppercase">{item.name}</h4>
-              <p className="text-xl font-black text-[#1E40AF] mb-6">{item.price}</p>
-              <a href={whatsappLink} className="block w-full text-center py-3 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest hover:bg-[#DB2777] transition-colors">Inquire</a>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* --- INVENTORY LIST --- */}
+      <main className="px-8 md:px-12 py-16">
+        <div className="max-w-7xl mx-auto">
+          {categories.map((category) => {
+            const categoryItems = allItems.filter(item => 
+              item.cat === category && 
+              (item.name.toLowerCase().includes(searchQuery.toLowerCase()))
+            );
 
-      {/* TABLE TENNIS & BALLS */}
-      <section className="py-20 px-8 md:px-24 bg-slate-900 text-white rounded-[40px] mx-4">
-        <div className="grid md:grid-cols-2 gap-16">
-          <div>
-            <h3 className="text-[#DB2777] text-xs font-bold tracking-widest uppercase mb-8">Table Tennis Units</h3>
-            {tableTennis.map((item, i) => (
-              <div key={i} className="flex justify-between items-center py-6 border-b border-slate-800">
-                <div>
-                  <p className="font-bold text-lg">{item.name}</p>
-                  <p className="text-xs text-slate-500 uppercase tracking-widest">{item.material}</p>
+            if (categoryItems.length === 0) return null;
+
+            return (
+              <div key={category} className="mb-20 bg-slate-50/30 p-8 rounded-[3rem] border border-slate-100">
+                <h3 className="text-2xl font-black uppercase italic tracking-tighter text-[#1E40AF] mb-10 flex items-center gap-4">
+                  {category} <div className="h-[2px] flex-1 bg-slate-200"></div>
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {categoryItems.map((item, i) => (
+                    <div key={i} className="flex flex-col border border-slate-100 p-8 rounded-[2.5rem] bg-white hover:border-[#DB2777] hover:shadow-xl transition-all group">
+                      <div className="flex-1">
+                        <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{item.cat}</span>
+                        <h4 className="font-black uppercase text-sm mt-3 leading-tight group-hover:text-[#1E40AF]">{item.name}</h4>
+                        <p className="text-2xl font-black mt-3 text-slate-900 tracking-tighter">{item.price}</p>
+                        {item.note && <p className="text-[10px] text-green-600 font-bold mt-2 uppercase italic">{item.note}</p>}
+                      </div>
+                      <button 
+                        onClick={() => handleOrder(item.name, item.price)}
+                        className="mt-8 w-full py-4 bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-[#DB2777] transition-all"
+                      >
+                        Place Order
+                      </button>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-[#DB2777] font-black">{item.price}</p>
               </div>
-            ))}
-          </div>
-          <div>
-            <h3 className="text-[#1E40AF] text-xs font-bold tracking-widest uppercase mb-8">Pro Accessories</h3>
-            <div className="grid grid-cols-2 gap-4">
-              {gear.map((item, i) => (
-                <div key={i} className="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
-                  <p className="text-[10px] text-slate-500 uppercase font-bold">{item.cat}</p>
-                  <p className="text-sm font-bold mt-1">{item.name}</p>
-                  <p className="text-[#25D366] text-xs font-bold mt-2">{item.price}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+            );
+          })}
         </div>
-      </section>
+      </main>
 
-      {/* FOOTER */}
-      <footer className="py-20 px-8 md:px-24 text-center">
-        <h2 className="text-2xl font-black italic text-[#1E40AF]">DD AND J <span className="text-[#DB2777]">SPORTS</span></h2>
-        <p className="text-slate-400 text-xs mt-4 tracking-[0.4em] uppercase font-bold">Sagamu Headquarters</p>
-        <div className="mt-10 flex flex-col items-center">
-            <p className="text-slate-400 text-[10px] uppercase mb-2">Sales & Support</p>
-            <a href={whatsappLink} className="text-2xl font-black hover:text-[#DB2777] transition-colors tracking-tighter">+234 902 929 1532</a>
-        </div>
-        <div className="mt-20 text-[9px] text-slate-300 tracking-[0.3em] uppercase">
-          © 2026 DD AND J Sports Venture — Wellness at its Peak.
+      {/* --- FOOTER --- */}
+      <footer className="bg-[#0F172A] text-white py-24 px-8 md:px-12 border-t border-slate-800">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-16 text-center lg:text-left">
+          <div>
+            <h1 className="text-3xl font-black italic tracking-tighter">DD AND J <span className="text-[#DB2777]">SPORTS</span></h1>
+            <p className="text-slate-500 text-[10px] font-bold uppercase tracking-[0.5em] mt-4">@{socialHandle}</p>
+          </div>
+          <div className="flex flex-col items-center lg:items-start">
+            <p className="text-[10px] font-bold text-[#DB2777] uppercase tracking-[0.5em] mb-2">Call Headquarters</p>
+            <p className="text-2xl md:text-4xl font-black tracking-tighter whitespace-nowrap">+234 902 929 1532</p>
+          </div>
+          <p className="text-[9px] text-slate-700 tracking-[0.5em] uppercase">© 2024 DD AND J Sports Venture.</p>
         </div>
       </footer>
     </div>
