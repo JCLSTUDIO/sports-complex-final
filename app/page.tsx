@@ -149,7 +149,7 @@ export default function DDandJSportsVenture() {
       {/* --- INVENTORY LIST --- */}
       <main className="px-8 md:px-12 py-16">
         <div className="max-w-7xl mx-auto">
-          {categories.map((category) => {
+          {categories.map((category: string) => {
             const categoryItems = allItems.filter(item => 
               item.cat === category && 
               (item.name.toLowerCase().includes(searchQuery.toLowerCase()))
