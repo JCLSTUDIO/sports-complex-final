@@ -94,7 +94,7 @@ export default function DDandJSportsVenture() {
 
   const categories = ["Snooker & Billiards", "Apparel & Accessories", "Field Sports", "Gym & Fitness", "Table Tennis", "Awards & Indoor Games", "Combat Sports"];
 
-  const handleOrder = (itemName, itemPrice) => {
+ const handleOrder = (itemName: string, itemPrice: string) => {
     const message = `Hello DD AND J SPORTS VENTURE, I want to purchase the ${itemName} (${itemPrice}). Please let me know the next steps.`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
@@ -204,3 +204,4 @@ export default function DDandJSportsVenture() {
     </div>
   );
 }
+
