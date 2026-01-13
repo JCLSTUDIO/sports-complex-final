@@ -35,45 +35,89 @@ export default function DDandJSportsVenture() {
   const whatsappNumber = "2349029291532";
   const socialHandle = "DDANDJSPORTSVENTURE";
 
+  // --- FULL MASTER INVENTORY RESTORED ---
   const allItems = [
-    // SNOOKER & BILLIARDS (Images connected to your folder)
+    // SNOOKER & BILLIARDS
     { cat: "Snooker & Billiards", name: "8ft Marble Snooker Board", price: "₦2,600,000", note: "Includes Sagamu Delivery", images: ["/images/marble-board-8ft.jpg"] },
     { cat: "Snooker & Billiards", name: "7ft Marble Snooker Board", price: "₦1,800,000", note: "Includes Sagamu Delivery", images: ["/images/marble-board-7ft.jpg"] },
+    { cat: "Snooker & Billiards", name: "Non-Marble Board (with Coin)", price: "₦1,200,000" },
+    { cat: "Snooker & Billiards", name: "Luxury Non-Marble Snooker Board", price: "₦1,000,000" },
     { cat: "Snooker & Billiards", name: "SNOOKER STICK (3IN1)", price: "₦65,000", images: ["/images/nooker-stick-3in1-1.jpg", "/images/nooker-stick-3in1-2.jpg", "/images/nooker-stick-3in1-3.jpg"] },
     { cat: "Snooker & Billiards", name: "SNOOKER BALL SET (PREMIUM)", price: "₦65,000", images: ["/images/snooker-balls.jpg"] },
+    { cat: "Snooker & Billiards", name: "SNOOKER CLOTH (PREMIUM)", price: "₦45,000" },
     { cat: "Snooker & Billiards", name: "MASTER CHALK (BOX)", price: "₦15,000", images: ["/images/master-chalk.jpg"] },
     { cat: "Snooker & Billiards", name: "SNOOKER GLOVES", price: "₦2,500", images: ["/images/snooker-gloves.jpg"] },
     { cat: "Snooker & Billiards", name: "PROFESSIONAL VELCRO GLOVES", price: "₦5,000", images: ["/images/gloves-velcro.jpg"] },
+    { cat: "Snooker & Billiards", name: "SNOOKER COIN DOLLAR/LIBERTY", price: "₦1,700" },
     { cat: "Snooker & Billiards", name: "CUE TIP GLUE", price: "₦1,500", images: ["/images/cue-tip-glue.jpg"] },
     { cat: "Snooker & Billiards", name: "SNOOKER TIP (9MM/10MM)", price: "₦700", images: ["/images/cue-tip.jpg"] },
+    { cat: "Snooker & Billiards", name: "FLAT TIPS (9MM/10MM)", price: "₦700" },
     { cat: "Snooker & Billiards", name: "SNOOKER CHALK", price: "₦500", images: ["/images/snooker-chalk-1.jpg", "/images/snooker-chalk-2.jpg"] },
 
     // APPAREL & ACCESSORIES
     { cat: "Apparel & Accessories", name: "NIKE ZOOM PEGASUS (43)", price: "₦60,000" },
+    { cat: "Apparel & Accessories", name: "NIKE FLYKNIT/ZOOMX CANVAS", price: "₦50,000" },
     { cat: "Apparel & Accessories", name: "NIKE PHANTOM BOOT", price: "₦50,000" },
-    { cat: "Apparel & Accessories", name: "ADIDAS JOGGERS HIGH GRADE (3XL)", price: "₦38,000" },
+    { cat: "Apparel & Accessories", name: "NIKE GHOST LACE BOOT", price: "₦40,000" },
+    { cat: "Apparel & Accessories", name: "SKECHERS CANVAS", price: "₦40,000" },
+    { cat: "Apparel & Accessories", name: "NIKE SNEAKERS", price: "₦40,000" },
+    { cat: "Apparel & Accessories", name: "ADIDAS JOGGERS (3XL)", price: "₦38,000" },
     { cat: "Apparel & Accessories", name: "GYM BAG", price: "₦45,000" },
+    { cat: "Apparel & Accessories", name: "ADIDAS CANVAS", price: "₦30,000" },
+    { cat: "Apparel & Accessories", name: "FACE CAP (PREMIUM)", price: "₦25,000" },
+    { cat: "Apparel & Accessories", name: "ADIDAS F50 BOOTS", price: "₦25,000" },
+    { cat: "Apparel & Accessories", name: "UNDER ARMOUR SHORT", price: "₦20,000" },
+    { cat: "Apparel & Accessories", name: "NIKE LEGGINGS", price: "₦17,000" },
+    { cat: "Apparel & Accessories", name: "CHILDREN BOOT (33)", price: "₦13,000" },
+    { cat: "Apparel & Accessories", name: "SHORT TIGHTS", price: "₦5,000" },
+    { cat: "Apparel & Accessories", name: "NIKE/ADIDAS HOSE", price: "₦3,000" },
 
     // FIELD SPORTS
     { cat: "Field Sports", name: "MOLTEN AFC FOOTBALL", price: "₦25,000" },
     { cat: "Field Sports", name: "DERBY STAR FOOTBALL", price: "₦25,000" },
-    { cat: "Field Sports", name: "GOALKEEPER GLOVES (HIGH GRADE)", price: "₦35,000" },
+    { cat: "Field Sports", name: "STRIKER ACTIVE FOOTBALL", price: "₦25,000" },
+    { cat: "Field Sports", name: "NIKE/ADIDAS BALL", price: "₦25,000" },
+    { cat: "Field Sports", name: "GOALKEEPER GLOVES", price: "₦35,000" },
+    { cat: "Field Sports", name: "CLUB JERSEYS", price: "₦20,000" },
+    { cat: "Field Sports", name: "BADMINTON RACKET", price: "₦18,000" },
+    { cat: "Field Sports", name: "BALL BAG", price: "₦17,000" },
+    { cat: "Field Sports", name: "TRAINING CONE", price: "₦15,000" },
+    { cat: "Field Sports", name: "SILVER PUMP (BIG)", price: "₦10,000" },
+    { cat: "Field Sports", name: "SILVER PUMP (SMALL)", price: "₦8,000" },
+    { cat: "Field Sports", name: "WHISTLE (PLASTIC)", price: "₦5,000" },
 
     // GYM & FITNESS
-    { cat: "Gym & Fitness", name: "50kg Chrome Barbell & Dumbbell Set", price: "₦235,000" },
+    { cat: "Gym & Fitness", name: "50kg Chrome Set", price: "₦235,000" },
+    { cat: "Gym & Fitness", name: "30kg Chrome Set", price: "₦185,000" },
+    { cat: "Gym & Fitness", name: "YOGA MAT (BIG)", price: "₦30,000" },
+    { cat: "Gym & Fitness", name: "YOGA MAT (SMALL)", price: "₦25,000" },
+    { cat: "Gym & Fitness", name: "WEIGHT LIFTING BELT", price: "₦25,000" },
     { cat: "Gym & Fitness", name: "AB ROLLER WHEEL", price: "₦15,000" },
-    { cat: "Gym & Fitness", name: "HAND GRIPPER (ADJUSTABLE)", price: "₦9,000" },
+    { cat: "Gym & Fitness", name: "PUSH UP BAR", price: "₦12,000" },
+    { cat: "Gym & Fitness", name: "HAND GRIPPER", price: "₦9,000" },
+    { cat: "Gym & Fitness", name: "SKIPPING ROPE", price: "₦8,000" },
+    { cat: "Gym & Fitness", name: "RESISTANCE BAND", price: "₦3,000" },
 
     // TABLE TENNIS
-    { cat: "Table Tennis", name: "7ft Aluminum Table Tennis Board", price: "₦860,000" },
-    { cat: "Table Tennis", name: "TABLE TENNIS BAT (SINGLE)", price: "₦8,000" },
+    { cat: "Table Tennis", name: "7ft Aluminum Board", price: "₦860,000" },
+    { cat: "Table Tennis", name: "7ft SMC Board", price: "₦560,000" },
+    { cat: "Table Tennis", name: "TABLE TENNIS NET", price: "₦12,000" },
+    { cat: "Table Tennis", name: "TABLE TENNIS BAT", price: "₦8,000" },
+    { cat: "Table Tennis", name: "TABLE TENNIS EGG", price: "₦500" },
 
     // AWARDS & INDOOR GAMES
-    { cat: "Awards & Indoor Games", name: "Premium Trophy (Gold Set)", price: "₦140,000" },
+    { cat: "Awards & Indoor Games", name: "Premium Trophy (Gold)", price: "₦140,000" },
+    { cat: "Awards & Indoor Games", name: "Premium Trophy (Silver)", price: "₦125,000" },
+    { cat: "Awards & Indoor Games", name: "DART BOARD", price: "₦35,000" },
+    { cat: "Awards & Indoor Games", name: "FIRST AID BOX", price: "₦18,000" },
+    { cat: "Awards & Indoor Games", name: "SCRABBLE (LARGE)", price: "₦15,000" },
     { cat: "Awards & Indoor Games", name: "CHESS SET", price: "₦12,000" },
+    { cat: "Awards & Indoor Games", name: "MEDALS", price: "₦2,000" },
 
     // COMBAT SPORTS
     { cat: "Combat Sports", name: "BOXING GLOVES (EVERLAST)", price: "₦40,000" },
+    { cat: "Combat Sports", name: "BOXING GLOVES (VENOM)", price: "₦35,000" },
+    { cat: "Combat Sports", name: "MOUTH GUARD", price: "₦4,000" },
   ];
 
   const categories = ["Snooker & Billiards", "Apparel & Accessories", "Field Sports", "Gym & Fitness", "Table Tennis", "Awards & Indoor Games", "Combat Sports"];
@@ -90,9 +134,12 @@ export default function DDandJSportsVenture() {
           🚚 Free delivery on Marble Snooker Boards within Sagamu
         </div>
         <div className="p-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <h1 className="text-2xl font-black text-[#1E40AF] italic uppercase">
-            DD AND J <span className="text-[#DB2777]">SPORTS</span>
-          </h1>
+          <div className="text-center md:text-left">
+            <h1 className="text-2xl font-black text-[#1E40AF] italic uppercase">
+              DD AND J <span className="text-[#DB2777]">SPORTS</span>
+            </h1>
+            <p className="text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase mt-1">Wellness at its Peak</p>
+          </div>
           <input 
             type="text" 
             placeholder="Search gear..."
@@ -101,14 +148,6 @@ export default function DDandJSportsVenture() {
           />
         </div>
       </header>
-
-      <section className="bg-slate-50 py-16 px-8 md:px-12 border-b">
-        <div className="max-w-4xl mx-auto text-center md:text-left">
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.85] uppercase italic">
-            YOUR GAME, <br /> <span className="text-[#1E40AF]">OUR GEAR.</span>
-          </h2>
-        </div>
-      </section>
 
       <main className="px-8 md:px-12 py-16">
         <div className="max-w-7xl mx-auto">
@@ -126,7 +165,13 @@ export default function DDandJSportsVenture() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {categoryItems.map((item, i) => (
                     <div key={i} className="flex flex-col border border-slate-100 p-6 rounded-[2.5rem] bg-white hover:shadow-xl transition-all group">
-                      {item.images ? <ImageSlider images={item.images} /> : <div className="h-48 w-full bg-slate-100 rounded-[2rem] mb-4 flex items-center justify-center text-[10px] font-bold text-slate-300">Coming Soon</div>}
+                      {item.images ? (
+                        <ImageSlider images={item.images} />
+                      ) : (
+                        <div className="h-48 w-full bg-slate-50 rounded-[2rem] mb-4 flex items-center justify-center text-[10px] font-bold text-slate-300">
+                          Coming Soon
+                        </div>
+                      )}
                       <div className="flex-1">
                         <span className="text-[9px] font-black text-slate-400 uppercase">{item.cat}</span>
                         <h4 className="font-black uppercase text-sm mt-3 group-hover:text-[#1E40AF]">{item.name}</h4>
@@ -144,7 +189,10 @@ export default function DDandJSportsVenture() {
 
       <footer className="bg-[#0F172A] text-white py-24 px-8 md:px-12">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-16 text-center lg:text-left">
-          <h1 className="text-3xl font-black italic">DD AND J <span className="text-[#DB2777]">SPORTS</span></h1>
+          <div>
+            <h1 className="text-3xl font-black italic">DD AND J <span className="text-[#DB2777]">SPORTS</span></h1>
+            <p className="text-slate-500 text-[10px] font-bold uppercase tracking-[0.5em] mt-4">@{socialHandle}</p>
+          </div>
           <p className="text-2xl md:text-4xl font-black">+234 902 929 1532</p>
         </div>
       </footer>
