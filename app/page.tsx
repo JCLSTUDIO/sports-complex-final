@@ -33,8 +33,8 @@ export default function DDandJSportsVenture() {
   const [searchQuery, setSearchQuery] = useState("");
   const whatsappNumber = "2349029291532";
   const socialHandle = "DDANDJSPORTSVENTURE";
+  const domain = "https://ddandjsportcatalog.com";
 
-  // --- OFFICIAL MASTER INVENTORY (IMAGE PATHS ADDED) ---
   const allItems = [
     // SNOOKER & BILLIARDS
     { cat: "Snooker & Billiards", name: "8ft Marble Snooker Board", price: "₦2,600,000", note: "Includes Sagamu Delivery" },
@@ -79,28 +79,28 @@ export default function DDandJSportsVenture() {
     { cat: "Field Sports", name: "NIKE/ADIDAS BALL", price: "₦25,000" },
     { cat: "Field Sports", name: "GOALKEEPER GLOVES (HIGH GRADE)", price: "₦35,000" },
     { cat: "Field Sports", name: "CLUB JERSEYS", price: "₦20,000" },
-    { cat: "Field Sports", name: "BADMINTON RACKET", price: "₦18,000", images: ["/images/Badminton-Racket.jpg"] },
+    { cat: "Field Sports", name: "BADMINTON RACKET", price: "₦18,000", images: ["/images/badminton-racket.jpg"] },
     { cat: "Field Sports", name: "BALL BAG", price: "₦17,000", images: ["/images/ball-bag.jpg"] },
-    { cat: "Field Sports", name: "TRAINING CONE (FLAT)", price: "₦15,000", images: ["/images/Training-Cone-(Flat).jpg", "/images/cone-with-poles-(1).jpg", "/images/cone-with-poles-(2).jpg"] },
+    { cat: "Field Sports", name: "TRAINING CONE (FLAT)", price: "₦15,000", images: ["/images/training-cone-(flat).jpg", "/images/cone-with-poles-(1).jpg", "/images/cone-with-poles-(2).jpg"] },
     { cat: "Field Sports", name: "SILVER PUMP (BIG)", price: "₦10,000" },
     { cat: "Field Sports", name: "SILVER PUMP (SMALL)", price: "₦8,000" },
     { cat: "Field Sports", name: "WHISTLE (PLASTIC)", price: "₦5,000", images: ["/images/whistle.jpg"] },
 
     // GYM & FITNESS
-    { cat: "Gym & Fitness", name: "50kg Chrome Barbell & Dumbbell Set", price: "₦235,000", images: ["/images/50kg-Chrome-Barbell-&-Dumbbell-Set.jpg", "/images/50kg-Chrome-Barbell-&-Dumbbell-Set-2.jpg", "/images/50kg-Chrome-Barbell-&-Dumbbell-Set-3.jpg"] },
-    { cat: "Gym & Fitness", name: "30kg Chrome Dumbbell Set", price: "₦185,000", images: ["/images/30kg-Chrome-Dumbbell-Set.jpg", "/images/30kg-Chrome-Dumbbell-Set-2.jpg"] },
-    { cat: "Gym & Fitness", name: "YOGA MAT (BIG)", price: "₦30,000", images: ["/images/Yoga-Mat-(Small).jpg"] },
-    { cat: "Gym & Fitness", name: "YOGA MAT (SMALL)", price: "₦25,000", images: ["/images/Yoga-Mat-(Small).jpg"] },
-    { cat: "Gym & Fitness", name: "WEIGHT LIFTING BELT", price: "₦25,000", images: ["/images/Weight-Lifting-Belt.jpg"] },
-    { cat: "Gym & Fitness", name: "AB ROLLER WHEEL", price: "₦15,000", images: ["/images/ab-Roller-Wheel.jpg", "/images/rebound-roller-wheel-(1).jpg", "/images/rebound-roller-wheel-(2).jpg"] },
-    { cat: "Gym & Fitness", name: "PUSH UP BAR", price: "₦12,000", images: ["/images/push-up-bar.jpg", "/images/Push-Up-Bar-2.jpg"] },
-    { cat: "Gym & Fitness", name: "HAND GRIPPER (ADJUSTABLE)", price: "₦9,000", images: ["/images/Hand-Gripper-(Adjustable).jpg", "/images/hand-gripper.jpg"] },
-    { cat: "Gym & Fitness", name: "SKIPPING ROPE (COUNTING)", price: "₦8,000", images: ["/images/Skipping-Rope-(Counting)-(1).jpg", "/images/Skipping-Rope-(Counting)-(3).jpg", "/images/Skipping-Rope-(Counting)-(4).jpg"] },
-    { cat: "Gym & Fitness", name: "RESISTANCE LOOP BAND (5IN1)", price: "₦3,000", images: ["/images/Resistance-Loop-Band-(5-in-1).jpg", "/images/resistance-band-loop.jpg"] },
+    { cat: "Gym & Fitness", name: "50kg Chrome Barbell & Dumbbell Set", price: "₦235,000", images: ["/images/50kg-chrome-barbell-&-dumbbell-set.jpg", "/images/50kg-chrome-barbell-&-dumbbell-set-2.jpg", "/images/50kg-chrome-barbell-&-dumbbell-set-3.jpg"] },
+    { cat: "Gym & Fitness", name: "30kg Chrome Dumbbell Set", price: "₦185,000", images: ["/images/30kg-chrome-dumbbell-set.jpg", "/images/30kg-chrome-dumbbell-set-2.jpg"] },
+    { cat: "Gym & Fitness", name: "YOGA MAT (BIG)", price: "₦30,000", images: ["/images/yoga-mat-(small).jpg"] },
+    { cat: "Gym & Fitness", name: "YOGA MAT (SMALL)", price: "₦25,000", images: ["/images/yoga-mat-(small).jpg"] },
+    { cat: "Gym & Fitness", name: "WEIGHT LIFTING BELT", price: "₦25,000", images: ["/images/weight-lifting-belt.jpg"] },
+    { cat: "Gym & Fitness", name: "AB ROLLER WHEEL", price: "₦15,000", images: ["/images/ab-roller-wheel.jpg", "/images/rebound-roller-wheel-(1).jpg", "/images/rebound-roller-wheel-(2).jpg"] },
+    { cat: "Gym & Fitness", name: "PUSH UP BAR", price: "₦12,000", images: ["/images/push-up-bar.jpg", "/images/push-up-bar-2.jpg"] },
+    { cat: "Gym & Fitness", name: "HAND GRIPPER (ADJUSTABLE)", price: "₦9,000", images: ["/images/hand-gripper-(adjustable).jpg", "/images/hand-gripper.jpg"] },
+    { cat: "Gym & Fitness", name: "SKIPPING ROPE (COUNTING)", price: "₦8,000", images: ["/images/skipping-rope-(counting)-(1).jpg", "/images/skipping-rope-(counting)-(3).jpg", "/images/skipping-rope-(counting)-(4).jpg"] },
+    { cat: "Gym & Fitness", name: "RESISTANCE LOOP BAND (5IN1)", price: "₦3,000", images: ["/images/resistance-loop-band-(5-in-1).jpg", "/images/resistance-band-loop.jpg"] },
 
     // TABLE TENNIS
     { cat: "Table Tennis", name: "7ft Aluminum Table Tennis Board", price: "₦860,000" },
-    { cat: "Table Tennis", name: "7ft SMC Table Tennis Board", price: "₦560,000", images: ["/images/7ft-SMC-Table-Tennis-Board.jpg"] },
+    { cat: "Table Tennis", name: "7ft SMC Table Tennis Board", price: "₦560,000", images: ["/images/7ft-smc-table-tennis-board.jpg"] },
     { cat: "Table Tennis", name: "TABLE TENNIS NET & POST", price: "₦12,000", images: ["/images/table-tennis-net.jpg"] },
     { cat: "Table Tennis", name: "TABLE TENNIS BAT (SINGLE)", price: "₦8,000" },
     { cat: "Table Tennis", name: "TABLE TENNIS EGG (WHITE)", price: "₦500" },
@@ -115,15 +115,17 @@ export default function DDandJSportsVenture() {
     { cat: "Awards & Indoor Games", name: "MEDALS HIGH GRADE", price: "₦2,000" },
 
     // COMBAT SPORTS
-    { cat: "Combat Sports", name: "BOXING GLOVES (EVERLAST)", price: "₦40,000", images: ["/images/Boxing-Gloves-(Everlast).jpg", "/images/Boxing-Gloves-(Everlast)-2.jpg"] },
+    { cat: "Combat Sports", name: "BOXING GLOVES (EVERLAST)", price: "₦40,000", images: ["/images/boxing-gloves-(everlast).jpg", "/images/boxing-gloves-(everlast)-2.jpg"] },
     { cat: "Combat Sports", name: "BOXING GLOVES (VENOM)", price: "₦35,000" },
-    { cat: "Combat Sports", name: "MOUTH GUARD", price: "₦4,000", images: ["/images/Mouth-Guard.jpg", "/images/Mouth-Guard-2.jpg"] },
+    { cat: "Combat Sports", name: "MOUTH GUARD", price: "₦4,000", images: ["/images/mouth-guard.jpg", "/images/mouth-guard-2.jpg"] },
   ];
 
   const categories = ["Snooker & Billiards", "Apparel & Accessories", "Field Sports", "Gym & Fitness", "Table Tennis", "Awards & Indoor Games", "Combat Sports"];
 
-  const handleOrder = (itemName: string, itemPrice: string) => {
-    const message = `Hello DD AND J SPORTS VENTURE, I want to purchase the ${itemName} (${itemPrice}). Please let me know the next steps.`;
+  const handleOrder = (item: any) => {
+    // Pro Feature: Adds the image link so you can see what they are buying!
+    const imageLink = item.images ? `\n\nProduct View: ${domain}${item.images[0]}` : "";
+    const message = `Hello DD AND J SPORTS VENTURE, I want to purchase the ${item.name} (${item.price}).${imageLink}\n\nPlease let me know the next steps.`;
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -201,7 +203,7 @@ export default function DDandJSportsVenture() {
                         <p className="text-2xl font-black mt-3 text-slate-900 tracking-tighter">{item.price}</p>
                         {item.note && <p className="text-[10px] text-green-600 font-bold mt-2 uppercase italic">{item.note}</p>}
                       </div>
-                      <button onClick={() => handleOrder(item.name, item.price)} className="mt-8 w-full py-4 bg-slate-900 text-white text-[10px] font-black uppercase rounded-2xl hover:bg-[#DB2777] transition-all">Place Order</button>
+                      <button onClick={() => handleOrder(item)} className="mt-8 w-full py-4 bg-slate-900 text-white text-[10px] font-black uppercase rounded-2xl hover:bg-[#DB2777] transition-all">Place Order</button>
                     </div>
                   ))}
                 </div>
