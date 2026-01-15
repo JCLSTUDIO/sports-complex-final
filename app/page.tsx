@@ -123,7 +123,6 @@ export default function DDandJSportsVenture() {
   const categories = ["Snooker & Billiards", "Apparel & Accessories", "Field Sports", "Gym & Fitness", "Table Tennis", "Awards & Indoor Games", "Combat Sports"];
 
   const handleOrder = (item: any) => {
-    // Pro Feature: Adds the image link so you can see what they are buying!
     const imageLink = item.images ? `\n\nProduct View: ${domain}${item.images[0]}` : "";
     const message = `Hello DD AND J SPORTS VENTURE, I want to purchase the ${item.name} (${item.price}).${imageLink}\n\nPlease let me know the next steps.`;
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
@@ -137,12 +136,26 @@ export default function DDandJSportsVenture() {
           🚚 Free delivery on Marble Snooker Boards within Sagamu
         </div>
         <div className="p-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-center md:text-left">
-            <h1 className="text-2xl font-black text-[#1E40AF] tracking-tighter leading-none italic uppercase">
-              DD AND J <span className="text-[#DB2777]">SPORTS</span>
-            </h1>
-            <p className="text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase mt-1">Wellness at its Peak | Est. 2024</p>
+          <div className="flex items-center gap-4 text-center md:text-left">
+            {/* LOGO BOX */}
+            <div className="relative h-12 w-12 overflow-hidden rounded-xl border border-slate-100 shadow-sm">
+              <Image 
+                src="/logo.png" 
+                alt="DD and J Sports Logo" 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
+            
+            <div>
+              <h1 className="text-2xl font-black text-[#1E40AF] tracking-tighter leading-none italic uppercase">
+                DD AND J <span className="text-[#DB2777]">SPORTS</span>
+              </h1>
+              <p className="text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase mt-1">Wellness at its Peak | Est. 2024</p>
+            </div>
           </div>
+
           <div className="relative w-full md:w-[450px]">
             <input 
               type="text" 
