@@ -1,6 +1,7 @@
 "use client"; 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // --- SLIDER COMPONENT ---
 const ImageSlider = ({ images }: { images: string[] }) => {
@@ -240,6 +241,10 @@ export default function DDandJSportsVenture() {
           <p className="text-[9px] text-slate-700 tracking-[0.5em] uppercase">© 2024 DD AND J Sports Venture.</p>
         </div>
       </footer>
+
+      {/* VERCEL SPEED INSIGHTS COMPONENT */}
+      <SpeedInsights />
+
     </div>
   );
 }
