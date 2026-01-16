@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 // --- SLIDER COMPONENT ---
 const ImageSlider = ({ images }: { images: string[] }) => {
@@ -138,7 +139,6 @@ export default function DDandJSportsVenture() {
         </div>
         <div className="p-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4 text-center md:text-left">
-            {/* LOGO BOX */}
             <div className="relative h-12 w-12 overflow-hidden rounded-xl border border-slate-100 shadow-sm">
               <Image 
                 src="/logo.png" 
@@ -242,8 +242,9 @@ export default function DDandJSportsVenture() {
         </div>
       </footer>
 
-      {/* VERCEL SPEED INSIGHTS COMPONENT */}
+      {/* VERCEL MONITORING */}
       <SpeedInsights />
+      <Analytics />
 
     </div>
   );
